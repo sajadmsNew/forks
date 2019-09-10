@@ -10,15 +10,9 @@ import { StateProvider } from '@states/tournaments';
 import { tournaments } from '@reducers/tournaments';
 
 const Home = () => {
-  const id = 177160;
-  // const initialState = TournamentAPI.GET(id).then((response) => {
-  //   return { tournaments: [ response ] } ;
-  // });
   const initialState = {
     tournaments: []
   }
-
-  console.log(initialState);
 
   return (
     <Layout>

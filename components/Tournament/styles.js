@@ -37,9 +37,22 @@ export const Filter = styled.div``;
 export const List = styled.ul`
   display: flex;
   flex-flow: column nowrap;
-  margin-bottom: ${rem(-14)};
+  margin: 0 ${rem(-10)} ${rem(-14)};
   max-height: ${rem(320)};
+  padding: 0 ${rem(10)};
   overflow: auto;
+
+  &::-webkit-scrollbar-track {
+    background-color: ${props => props.theme.colors.background};
+  }
+
+  &::-webkit-scrollbar {
+    width: ${rem(4)};
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: ${props => props.theme.colors.slots[0]};
+  }
 `;
 
 export const Item = styled.li`

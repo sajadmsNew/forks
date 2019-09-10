@@ -8,7 +8,7 @@ export const ESLPlay = {
   },
   colors: {
     background: '#ebecee',
-    slots: ['#26ad5d', '#f4f5f7', '#28b662', '#e43726', '#6bff37']
+    slots: ['#26ad5d', '#f4f5f7', '#28b662', '#e43726', '#6bff37', '#fdff0d']
   },
   fonts: {
     primary: '"Open Sans", sans-serif',

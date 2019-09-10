@@ -19,7 +19,8 @@
           "@utils": "./utils",
           "@icons": "./icons",
           "@states": "./states",
-          "@reducers": "./reducers"
+          "@reducers": "./reducers",
+          "@data": "./data"
         }
       }
     ]

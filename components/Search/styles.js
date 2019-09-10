@@ -35,7 +35,8 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-  border: 0 none;
+  border: ${props => props.error ? `${rem(1)} solid red` : `${rem(1)} solid transparent`};
+  color: ${props => props.theme.fonts.colors.slots[1]};
   font-size: ${rem(15)};
   font-weight: 400;
   line-height: ${rem(20)};
@@ -44,11 +45,31 @@ export const Input = styled.input`
   padding: ${rem(16)} ${rem(11)} ${rem(14)};
   flex: 1 1 auto;
   width: 100%;
+  transition: all 150ms ease-in-out;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 ${rem(3)} 0 rgba(0, 0, 0, .3);
+    color: ${props => props.theme.fonts.colors.slots[0]};
+  }
+
+  &:focus {
+    border-color: ${props => props.theme.colors.slots[2]};
+  }
 
   &:focus ~ ${Label} {
     font-size: ${rem(10)};
     margin-top: ${rem(-17)};
   }
+
+  ${props =>
+    !props.empty && `
+      & ~ ${Label} {
+        font-size: ${rem(10)};
+        margin-top: ${rem(-17)};
+      }
+    `
+    }
 `;
 
 export const Error = styled.span`
@@ -73,6 +94,7 @@ export const Add = styled.button`
   right: 0;
   top: 50%;
   margin-top: ${rem(-2)};
+  outline: none;
   transform: translateY(-50%);
   width: ${rem(80)};
   z-index: 10;

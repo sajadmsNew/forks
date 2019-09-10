@@ -1,8 +1,8 @@
 import axios from 'axios';
 import moment from 'moment';
-import { Leagues } from '../data/leagues';
-import { Results } from '../data/results';
-import { Contestants } from '../data/contestants';
+import { Leagues } from '@data/leagues';
+import { Results } from '@data/results';
+import { Contestants } from '@data/contestants';
 
 export const TournamentAPI = {
     async GET(code) {
@@ -18,7 +18,6 @@ export const TournamentAPI = {
       if(leagues.error) {
         data.message = leagues.error.message;
       } else {
-        console.log(leagues);
         const date = moment(leagues.timeline.inProgress.begin).format('Do MMM YYYY');
         const resultsList = results.map(item => {
           return {

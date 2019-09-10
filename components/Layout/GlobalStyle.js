@@ -49,6 +49,7 @@ export const GlobalStyle = createGlobalStyle`
       background-attachment: fixed;
       font: 400 100%/1 ${props => props.theme.fonts.primary};
       padding-top: ${rem(60)};
+      scroll-behavior: smooth;
       text-rendering: optimizeLegibility;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -64,12 +65,12 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   ::-moz-selection { 
-      background-color: ${props => props.theme.colors.slot1};
-      color: white;
+      background-color: ${props => props.theme.colors.slots[4]};
+      color: ${props => props.theme.fonts.colors.slots[0]};
   }
   ::selection { 
-      background-color: ${props => props.theme.colors.slot1};
-      color: white;
+      background-color: ${props => props.theme.colors.slots[4]};
+      color: ${props => props.theme.fonts.colors.slots[0]};
   }
 
   textarea, input { 

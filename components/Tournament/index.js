@@ -1,5 +1,5 @@
-import { Card } from '../Card';
-import { useStateValue } from '../../states/tournaments';
+import { Card } from '@components/Card';
+import { useStateValue } from '@states/tournaments';
 import { Tournaments, Tag, Title, Date, Filter, List, Item, Time, Team, Name, Score } from './styles';
 
 export const Tournament = props => {

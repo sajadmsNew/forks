@@ -16,7 +16,7 @@ export const Layout = props => {
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
           <meta name="mobile-web-app-capable" content="yes" />
-          <meta name="theme-color" content="#2d323c" />
+          <meta name="theme-color" content="#26ad5d" />
           <link rel="shortcut icon" href={FavIcon} type="image/png" />
           <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet" />
         </Head>
