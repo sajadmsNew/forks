@@ -41,7 +41,7 @@ export const Input = styled.input`
   line-height: ${rem(20)};
   margin: ${rem(-18)} ${rem(-10)} ${rem(-14)};
   height: ${rem(50)};
-  padding: ${rem(18)} ${rem(11)} ${rem(12)};
+  padding: ${rem(16)} ${rem(11)} ${rem(14)};
   flex: 1 1 auto;
   width: 100%;
 
@@ -57,7 +57,7 @@ export const Error = styled.span`
   font-size: ${rem(11)};
   position: absolute;
   left: ${rem(2)};
-  bottom: ${rem(-8)};
+  bottom: ${rem(-9)};
 `;
 
 export const Add = styled.button`

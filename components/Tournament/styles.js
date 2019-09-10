@@ -38,7 +38,7 @@ export const List = styled.ul`
   display: flex;
   flex-flow: column nowrap;
   margin-bottom: ${rem(-14)};
-  max-height: ${rem(349)};
+  max-height: ${rem(320)};
   overflow: auto;
 `;
 

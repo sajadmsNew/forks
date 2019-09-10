@@ -6,15 +6,20 @@ import { TournamentAPI } from '../../services/tournamentsAPI';
 import { useStateValue } from '../../states/tournaments';
 
 export const Search = () => {
-  const { register, handleSubmit, errors } = useForm();
+  const { register, handleSubmit, errors, setError } = useForm();
   const [{ theme }, dispatch] = useStateValue();
 
   const onSubmit = ({tournamentid}) => {
     TournamentAPI.GET(tournamentid).then((response) => {
-      dispatch({
-        type: 'ADD',
-        newTournament: response
-      })
+      console.log(response);
+      if(response.error) {
+        setError("tournamentid", "notFound", response.error);
+      } else {
+        dispatch({
+          type: 'ADD',
+          newTournament: response
+        })
+      }
     });
   };
 
@@ -22,10 +27,19 @@ export const Search = () => {
     <Tag>
       <Card>
         <Form onSubmit={handleSubmit(onSubmit)}>
-          <Input name="tournamentid" ref={register({ required: true })} id="search-input" />
+          <Input name="tournamentid" ref={register({ 
+            required: {
+              value: true,
+              message: "Please enter a valid Tournament ID"
+            },
+            pattern: {
+              value: /^[0-9]+$/,
+              message: "Please enter a valid Tournament ID"
+            } 
+            })} id="search-input" />
           { errors.tournamentid && (
             <Error>
-              Tournament ID is required.
+              {errors.tournamentid.message}
             </Error>
           ) }
           <Label htmlFor="search-input">
